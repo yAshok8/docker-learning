@@ -51,6 +51,12 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<!--<scope>provided</scope>-->
 		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -60,6 +66,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>docker-spring-boot</finalName>
 	</build>
 
 </project>
