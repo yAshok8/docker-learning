@@ -1,0 +1,67 @@
+Docker Tuts 
+
+	1. Docker Default Port : 192.168.99.100
+	2. docker run -d -p 8080:80 instance_name:tag_name
+	3. docker stop <container_id>/<instance_name> [stopping the container (not removing)]
+	4. docker start <container_id>/<instance_name> [starting the container]
+	5. docker run -d -p 8080:80 -p 8081:80 instance_name:tag_name [running multiple instances] 
+	6. docker-machine stop [stopping the vm]
+	7. docker ps [list of running containers]
+	8. docker ps -a [list all running/stopped containers]
+	9. docker rm <container_id>/<instance_name>
+	10. docker ps -aq [list all container ids only]
+	11. docker rm $(docker ps -aq) [removing all non running containers]
+	12. docker rm -f $(docker ps -aq) [removing all running and non running containers]
+	13. ctrl + L [clearing screen]
+	14. docker run --name <any_name> <hostport>:<container_port> instance_name:tag_name [naming a container]
+	15. docker run -v $(pwd):<container_path> -d -p 8000:80 instance_name [mounting host file system to container, for windows file system should be from c:Users directory]
+	
+	
+	=================
+	
+	Docker File:
+	In website folder create a file called Dockerfile.
+	Add below 2 lines
+	a. FROM nginx:latest => you never create complete image file your self. You need some other image on top of which you create your own. Here we are using nginx.
+	b. ADD . /usr/share/nginx/html
+	
+	Create an image from above docker file 
+	16. docker build --tag <imagename>:<tagname> <Dockerfile Path>
+		Ex: docker build --tag user-service-api:latest .
+	17. .dockerignore
+	18. caching in docker: In order to perform smooth image creation, Docker uses caching mechanism.
+	The steps used while writing dockerfile has a lot of significance. Make sure the steps are organized in such a way that docker makes use of caching efficiently.
+	
+	Reducing Image Size
+	=> To reduce your image size, whatever dependency image you are using in your own image, try to fetch its alpine distribution. This can be easily achieved by navigating its docker hub page.
+	The command to fetch the alpine version of any image is as below.
+	20. docker pull node:latest-alpine (this is conditional)
+	The alpine distribution of any image is very small and secure.
+	
+	==> You can not have images with same repo and tag name. Therefore when you build a new image the older one gets its name as none.
+	
+	=> In Dockerfile when you write FROM node:alpine and create an image from it, it always create the image by fetching the latest version of node. In future the node gets updated and your code can also possibly break. You might not want that right?? For that you specify the exact node version in your dockerfile. Example: FROM node:10.16.1-alpine. (Always fetches specified version)
+	
+	Tagging => Whenever we re-build the same image with same tag the older one get overriden with the newer one. 
+	The command to tag is: docker tag <old_image>:<old_tag> <new_image>:<new_tag>
+	21. docker tag website:latest website:1
+	
+	=> To login your remote repo using local machine
+	22. docker login
+	
+	=> To push your local image to remote repo
+	23. docker push <image_name>:<tag_name>
+	
+	=> To pull your own image
+	24. docker pull <image_name>:<tag_name>
+	
+	=> To inspect docker container
+	25. docker imspect <container_id>
+	
+	=> To see logs of container
+	26. docker logs <container_id>
+	27. docker logs -f <container_id>
+	
+	=> The exec command (To Enter into a docker container)
+	28. docker exec -it <container_id> /bin/sh
+	
