@@ -1,3 +1,5 @@
+Important: if localhost wont run the spring app you should try docker port => http://192.168.99.100/... Example: http://192.168.99.100:8085/students/limits
+
 Docker Tuts 
 
 	1. Docker Default Port : 192.168.99.100
