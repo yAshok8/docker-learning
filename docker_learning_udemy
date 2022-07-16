@@ -1,0 +1,8 @@
+Date: 16-07-2022
+
+1. command: `docker run <image_name> <command>` => the command will override the default command of image.
+2. docker ps
+3. container lifecycle => docker run = docker create + docker start
+  a. create a container
+  b. run the container
+  c. container starts and exits. We can restart the exited container with `docker start container_id` command.
