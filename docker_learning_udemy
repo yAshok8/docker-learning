@@ -6,3 +6,13 @@ Date: 16-07-2022
   a. create a container
   b. run the container
   c. container starts and exits. We can restart the exited container with `docker start container_id` command.
+  
+  
+  Date 18-07-2022
+  
+  docker system prune => All stopped container and cached containers.
+  Get the logs from the container in the real time: docker log <container_id>. This will print the logs of the container no matter what is the state of the container.
+  Stopping a running container: We can use docker stop or kill command. Docker stop issues SIGTERM signal. 
+  Where as docker kill issues SIGKILL signal to the running processes inside the container.
+  
+  Home Work: Run a container for docker run busybox ping google.com and try killing that using STOP and KILL commands of docker. Note down the observation.
