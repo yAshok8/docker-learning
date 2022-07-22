@@ -16,3 +16,10 @@ Date: 16-07-2022
   Where as docker kill issues SIGKILL signal to the running processes inside the container.
   
   Home Work: Run a container for docker run busybox ping google.com and try killing that using STOP and KILL commands of docker. Note down the observation.
+  
+  Date 21-07-2022
+  
+  docker exec: command to interact with any container.
+  docker exec -it <container_id> <command_to_exec> 
+  Significance of -it is it will make you interact with container only by being inside the container on current terminal.
+  If you wont provide -it flag, the command will exit immediately. You will be kicked back to external terminal.
