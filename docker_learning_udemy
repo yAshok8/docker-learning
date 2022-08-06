@@ -23,3 +23,11 @@ Date: 16-07-2022
   docker exec -it <container_id> <command_to_exec> 
   Significance of -it is it will make you interact with container only by being inside the container on current terminal.
   If you wont provide -it flag, the command will exit immediately. You will be kicked back to external terminal.
+
+  Date 08-08-2022
+  
+  Command: `docker build .`
+  Dockerfile: Writing a docketfile means telling an empty computer which has nothing to install a software.
+  Instructions: FROM, RUN, CMD.
+  a. FROM: The docker server will make use of this instruction to fetch a base software to build that image.
+  b. RUN: after the first step, this instruction will RUN a command on that image.
