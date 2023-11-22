@@ -50,4 +50,4 @@ Date: 16-07-2022
   => Learnt what docker compose command is (docker-compose up, docker compose down)
   => Multiple containers starts with docker-compse are spawned in an env where they have their own network layer through which they communicate
   => Various restart policies.
-  => docker-compose ps: Shows runnning container in current directory where docker-compose file is present. 
+  => docker-compose ps: Shows runnning container in current directory where docker-compose file is present.
